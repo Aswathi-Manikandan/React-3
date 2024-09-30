@@ -2,13 +2,16 @@
 
 
 import Counter from "./Counter";
-
+import { useState } from "react";
 
 function App() {
+ const [state,setState] =useState(false)
   return (
     <div className="App">
-     <h1>Hello World</h1>
-    <Counter/>
+       
+     <button onClick={()=>setState(!state)}>show/hide</button>
+          { state?<Counter/> : null}
+    
     </div>
   );
 }
